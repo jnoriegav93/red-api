@@ -14,14 +14,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/api', 
-        authRoutes,
-        hiloRoutes,
-        mufaRoutes,
-        onuRoutes,
-        posteRoutes,
-        splitterRoutes
-    );
 //Test
 app.use((req, res, next) => {
     // res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
@@ -30,6 +22,14 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
+app.use('/api', 
+        authRoutes,
+        hiloRoutes,
+        mufaRoutes,
+        onuRoutes,
+        posteRoutes,
+        splitterRoutes
+    );
 export default app;
 
 

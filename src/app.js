@@ -22,6 +22,12 @@ app.use('/api',
         posteRoutes,
         splitterRoutes
     );
+//Test
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Permite solicitudes de cualquier origen
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 export default app;
 
 
